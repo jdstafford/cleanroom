@@ -1,0 +1,14 @@
+<div class="tasks-container">
+    <div class="tasks-row">
+        <h1>HI! PLEASE CLEAN YOUR ROOM.</h1>
+    </div>
+    <div class="tasks-row">
+        <p>COMPLETE THE TASK BELOW, THEN MOVE ON BY CLICKING "DONE!"</p>
+    </div>
+    <div class="tasks-row">
+        <div class="current-task" ng-if="models.currentTask">
+            {{models.currentTask.description}}
+            <button class="btn-done">DONE!</button>
+        </div>
+    </div>
+</div>
