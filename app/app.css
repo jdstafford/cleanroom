@@ -37,8 +37,27 @@
 }
 
 .current-task {
+  display: flex;
+  align-items: center;
   border: 1px solid red;
   background-color: rgba(255, 0, 0, .15);
   width: 800px;
   height: 400px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.current-task button {
+  width: 100px;
+}
+
+.all-done {
+  display: flex;
+  align-items: center;
+  border: 1px solid green;
+  background-color: rgba(0, 255, 0, .15);
+  width: 800px;
+  height: 400px;
+  flex-direction: column;
+  justify-content: space-around;
 }

@@ -2,13 +2,28 @@
     <div class="tasks-row">
         <h1>HI! PLEASE CLEAN YOUR ROOM.</h1>
     </div>
-    <div class="tasks-row">
+    <div class="tasks-row" ng-if="models.currentTask" ng-hide="models.createTask || models.allDone">
         <p>COMPLETE THE TASK BELOW, THEN MOVE ON BY CLICKING "DONE!"</p>
     </div>
-    <div class="tasks-row">
-        <div class="current-task" ng-if="models.currentTask">
+    <div class="tasks-row" ng-if="models.currentTask" ng-hide="models.createTask || models.allDone">
+        <div class="current-task">
             {{models.currentTask.description}}
-            <button class="btn-done">DONE!</button>
+            <button class="btn-done" ng-click="completeTask()">DONE!</button>
         </div>
+    </div>
+    <div class="tasks-row" ng-hide="models.createTask || !models.allDone">
+        <div class="all-done">ALL DONE!</div>
+    </div>
+    <br>
+    <div class="tasks-row" ng-hide="models.createTask">
+        <button class="btn-done" ng-click="addTask()">Add a Task</button>
+    </div>
+    <div class="tasks-row" ng-show="models.createTask">
+        <p>ADD A NEW TASK:</p>
+    </div>
+    <div class="tasks-row" ng-show="models.createTask">
+        <input type="text" ng-model="models.newTask">
+        <button class="btn-done" ng-click="cancelAddTask()">Cancel</button>
+        <button class="btn-done" ng-click="saveAddTask()">Save</button>
     </div>
 </div>
